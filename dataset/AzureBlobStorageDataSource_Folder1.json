@@ -1,0 +1,29 @@
+{
+	"name": "AzureBlobStorageDataSource_Folder1",
+	"properties": {
+		"description": "It describes the folder in the data source store.",
+		"linkedServiceName": {
+			"referenceName": "sourcels",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "String"
+			}
+		},
+		"type": "AzureBlob",
+		"typeProperties": {
+			"fileName": "",
+			"folderPath": {
+				"value": "@dataset().FolderPath",
+				"type": "Expression"
+			},
+			"key": "",
+			"bucketName": {
+				"value": "@dataset().FolderPath",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
